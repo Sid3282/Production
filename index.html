@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTEX - Production Tracking System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PARTEX</h1>
+      <p>Production Tracking System</p>
+    </header>
+
+    <section class="forms">
+      <!-- Add Product Form -->
+      <div class="form-container">
+        <button onclick="toggleForm('addProductForm')" class="btn btn-primary">
+          <i class="fas fa-plus"></i> Add Product
+        </button>
+        <div id="addProductForm" class="form">
+          <h3><i class="fas fa-box"></i> Add Product</h3>
+          <form id="productForm">
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="text" id="productSize" placeholder="Product Size" required>
+            <select id="productUnit">
+              <option value="kg">kg</option>
+              <option value="liter">liter</option>
+              <option value="box">box</option>
+              <option value="pcs">pcs</option>
+              <option value="ctn">ctn</option>
+            </select>
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-save"></i> Add Product
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Add Production Form -->
+      <div class="form-container">
+        <button onclick="toggleForm('productionForm')" class="btn btn-primary">
+          <i class="fas fa-plus"></i> Add Production
+        </button>
+        <div id="productionForm" class="form">
+          <h3><i class="fas fa-industry"></i> Add Production Entry</h3>
+          <form id="productionEntryForm">
+            <select id="productionProduct" required>
+              <option value="">Select Product</option>
+            </select>
+            <input type="number" id="productionQuantity" placeholder="Quantity" required>
+            <select id="productionUnit">
+              <option value="kg">kg</option>
+              <option value="liter">liter</option>
+              <option value="box">box</option>
+              <option value="pcs">pcs</option>
+              <option value="ctn">ctn</option>
+            </select>
+            <input type="date" id="productionDate" required>
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-save"></i> Add Production
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Section -->
+    <section class="reports">
+      <h2><i class="fas fa-chart-line"></i> Production Report</h2>
+      <div class="buttons">
+        <button id="itemwiseReportBtn" class="btn btn-info">
+          <i class="fas fa-list"></i> Itemwise Report
+        </button>
+        <button id="dailyReportBtn" class="btn btn-info">
+          <i class="fas fa-calendar-day"></i> Daily Report
+        </button>
+        <button id="monthlyReportBtn" class="btn btn-info">
+          <i class="fas fa-calendar-alt"></i> Monthly Report
+        </button>
+      </div>
+
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Item Name</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Edit/Delete History -->
+    <section class="history">
+      <h2><i class="fas fa-history"></i> Edit/Delete History</h2>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Item Name</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Export & Share -->
+    <section class="export-share">
+      <button id="exportPdfBtn" class="btn btn-warning">
+        <i class="fas fa-file-pdf"></i> Export as PDF
+      </button>
+      <button id="sendWhatsAppBtn" class="btn btn-success">
+        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+      </button>
+    </section>
+
+    <!-- Notifications -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Popup Message for New Production Entry -->
+    <div id="productionPopup" class="popup">
+      <p>New production entry saved successfully!</p>
+      <button class="close-popup" onclick="closePopup()">Close</button>
+    </div>
+
+    <footer>
+      <p>App created by Siddha Batala - 9803282511</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
