@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTEX - Production Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-industry"></i> PARTEX - Production Management</h1>
+    <p class="credit">Created by Siddha Batala (9803282511)</p>
+
+    <!-- Add Product Form -->
+    <div class="form-container">
+      <h2 onclick="toggleForm('addProductForm')"><i class="fas fa-plus"></i> Add Product</h2>
+      <form id="addProductForm" class="collapsible">
+        <input type="text" id="productName" placeholder="Product Name" required>
+        <select id="productUnit" required>
+          <option value="">Select Unit</option>
+          <option value="ctn">Ctn</option>
+          <option value="kg">Kg</option>
+          <option value="roll">Roll</option>
+          <option value="bag">Bag</option>
+        </select>
+        <input type="text" id="productSize" placeholder="Size (e.g., 50g, 80 pull)" required>
+        <button type="submit"><i class="fas fa-save"></i> Save Product</button>
+      </form>
+    </div>
+
+    <!-- Daily Production Entry -->
+    <div class="form-container">
+      <h2 onclick="toggleForm('productionForm')"><i class="fas fa-calendar-day"></i> Daily Production Entry</h2>
+      <form id="productionForm" class="collapsible">
+        <select id="productionProduct" required>
+          <option value="">Select Product</option>
+        </select>
+        <input type="number" id="productionQuantity" placeholder="Quantity" required>
+        <input type="date" id="productionDate" required>
+        <button type="submit"><i class="fas fa-check"></i> Add Entry</button>
+      </form>
+    </div>
+
+    <!-- Reports -->
+    <div class="form-container">
+      <h2 onclick="toggleForm('reportDisplay')"><i class="fas fa-chart-line"></i> Reports</h2>
+      <div id="reportDisplay" class="collapsible">
+        <button id="dailyReportBtn"><i class="fas fa-file-alt"></i> Daily Report</button>
+        <button id="weeklyReportBtn"><i class="fas fa-file-alt"></i> Weekly Report</button>
+        <button id="monthlyReportBtn"><i class="fas fa-file-alt"></i> Monthly Report</button>
+        <table id="reportTable">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Unit</th>
+              <th>Size</th>
+              <th>Date</th>
+              <th>Quantity</th>
+              <th>Total Stock</th>
+              <th>Closing Stock</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button id="exportPdfBtn"><i class="fas fa-download"></i> Export as PDF</button>
+        <button id="sendWhatsAppBtn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
